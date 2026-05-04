@@ -11,7 +11,14 @@ function draw(n) {
         div.style.height = `${960 / n}px`;
         container.appendChild(div);
         div.addEventListener("mouseenter", () =>{
-            div.style.backgroundColor = "pink";
+            if(div.style.backgroundColor){
+                div.style.opacity = Number(div.style.opacity) + 0.1;
+            }
+            else{
+                div.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
+                div.style.opacity = 0.1;
+            }
+            
         })
     }
 }
